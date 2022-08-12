@@ -49,6 +49,12 @@ steps:
     contents: 'default.conf'
     targetFolder: $(Build.ArtifactStagingDirectory)/react  
     
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: $(Build.SourcesDirectory)
+    contents: 'azuredotnet.yaml'
+    targetFolder: $(Build.ArtifactStagingDirectory)/react
+    
     
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Build Artifacts'

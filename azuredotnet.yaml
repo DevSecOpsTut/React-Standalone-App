@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactazrk8s-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: reactapiazr-app
+  template:
+    metadata:
+      labels:
+        app: reactapiazr-app
+    spec:
+      containers:
+      - name: myreactdockerrepo
+        image: containerregstrysample11.azurecr.io/neethucleetus/api:$(Build.BuildId)
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: acr-secret
+# service type loadbalancer       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reactapiazr1-appmetadata
+spec:
+  selector:
+    app: dotnetapiazr-app
+  ports:
+    - protocol: TCP
+      port: 8001
+      targetPort: 8001
+  type: LoadBalancer

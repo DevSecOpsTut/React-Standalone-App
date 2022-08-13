@@ -69,7 +69,7 @@ steps:
     repository: $(imageName)
     dockerfile: $(Build.ArtifactStagingDirectory)/react/Dockerfile
     containerRegistry: $(dockerRegistryServiceConnection)
-   # tags: |
+    tags: |
       $(tag)
     
 

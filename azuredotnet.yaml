@@ -15,6 +15,7 @@ spec:
       containers:
       - name: myreactdockerrepo
         image: containerregstrysample11.azurecr.io/react/nginx:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
       imagePullSecrets:
@@ -30,6 +31,6 @@ spec:
     app: dotnetapiazr-app
   ports:
     - protocol: TCP
-      port: 5000
+      port: 80
       targetPort: 5000
   type: LoadBalancer

@@ -16,7 +16,7 @@ spec:
       - name: myreactdockerrepo
         image: containerregstrysample11.azurecr.io/react/nginx:latest
         ports:
-        - containerPort: 80
+        - containerPort: 5000
       imagePullSecrets:
         - name: acr-secret
 # service type loadbalancer       

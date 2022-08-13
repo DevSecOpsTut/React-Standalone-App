@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myreactdockerrepo
-        image: containerregstrysample11.azurecr.io/react/nginx:latest
+        image: containerregstrysample11.azurecr.io/react/nginx:$(Build.BuildId)
         ports:
         - containerPort: 80
       imagePullSecrets:
@@ -30,6 +30,6 @@ spec:
     app: dotnetapiazr-app
   ports:
     - protocol: TCP
-      port: 8003
-      targetPort: 8003
+      port: 80
+      targetPort: 80
   type: LoadBalancer

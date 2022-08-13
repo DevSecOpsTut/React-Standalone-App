@@ -30,6 +30,6 @@ spec:
     app: dotnetapiazr-app
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 8001
+      targetPort: 8001
   type: LoadBalancer

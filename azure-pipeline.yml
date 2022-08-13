@@ -12,7 +12,7 @@ pool:
 variables:
   imageName: "react/nginx"
   dockerRegistryServiceConnection: "azure_portal"
-  #tag: "$(Build.BuildId)"
+  tag: "latest"
  
 steps:
 - task: NodeTool@0

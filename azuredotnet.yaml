@@ -1,36 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reactazrk8s-deployment
+  name: springboot-deployment
+  labels:
+    app: springboot
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: reactapiazr-app
+      app: springboot
   template:
     metadata:
       labels:
-        app: reactapiazr-app
+        app: springboot
     spec:
-      containers:
-      - name: myreactdockerrepo
-        image: containerregstrysample11.azurecr.io/react/nginx:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
       imagePullSecrets:
         - name: acr-secret
-# service type loadbalancer       
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: reactapiazr1-appmetadata
-spec:
-  selector:
-    app: dotnetapiazr-app
-  ports:
-    - protocol: TCP
-      port: 5000
-      targetPort: 5000
-  type: LoadBalancer
+      containers:
+      - name: springboot
+        image: containerregstrysample11.azurecr.io/react/nginx:latest
+        ports:
+        - containerPort: 8080

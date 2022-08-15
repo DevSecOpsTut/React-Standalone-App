@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: myreactdockerrepo
-        image: containerregstrysample11.azurecr.io/samples/nginx:latest
+        image: containerregstrysample11.azurecr.io/react/nginx:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 5000
       imagePullSecrets:
         - name: acr-secret
 # service type loadbalancer       

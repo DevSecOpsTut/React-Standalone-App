@@ -17,7 +17,7 @@ spec:
         image: containerregstrysample11.azurecr.io/samples/nginx:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 5000
       imagePullSecrets:
         - name: acr-secret
 # service type loadbalancer       
@@ -31,6 +31,6 @@ spec:
     app: dotnetapiazr-app
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 5000
+      port: 80
+      targetPort: 80
   type: LoadBalancer

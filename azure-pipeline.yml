@@ -52,7 +52,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: $(Build.SourcesDirectory)
-    contents: 'azuredotnet.yaml'
+    contents: 'acr_to_aks_deployment.yaml'
     targetFolder: $(Build.ArtifactStagingDirectory)/react
     
     

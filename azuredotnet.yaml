@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myreactdockerrepo
-        image: containerregstrysample11.azurecr.io/react/nginx:latest
+        image: containerregstrysample11.azurecr.io/samples/nginx:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80

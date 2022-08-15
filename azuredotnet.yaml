@@ -17,7 +17,7 @@ spec:
         image: containerregstrysample11.azurecr.io/react/nginx:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 5000
+        - containerPort: 80
       imagePullSecrets:
         - name: acr-secret
 # service type loadbalancer       
